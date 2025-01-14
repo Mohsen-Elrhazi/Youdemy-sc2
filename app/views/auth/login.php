@@ -28,15 +28,8 @@
             </div>
             <button type="submit" class="btn">Se connecter</button>
             <div class="register-link">
-                Pas encore de compte ? <a href="#">S'inscrire</a>
+                Pas encore de compte ? <a href="./register.php">S'inscrire</a>
             </div>
-            <!-- <div class="social-login">
-                <p>Ou connectez-vous avec</p>
-                <div class="social-buttons">
-                    <button type="button" class="social-btn">Google</button>
-                    <button type="button" class="social-btn">Facebook</button>
-                </div>
-            </div> -->
         </form>
     </div>
 </body>

@@ -17,23 +17,26 @@
         <form>
             <div class="form-group">
                 <label for="name">Nom complet</label>
-                <input type="text" id="name" required placeholder="Entrez votre nom" />
+                <input type="text" id="name" placeholder="Entrez votre nom" />
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required placeholder="Entrez votre email" />
+                <input type="email" id="email" placeholder="Entrez votre email" />
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" required placeholder="Créez un mot de passe" />
+                <input type="password" id="password" placeholder="Créez un mot de passe" />
             </div>
             <div class="form-group">
-                <label for="confirm-password">Confirmer le mot de passe</label>
-                <input type="password" id="confirm-password" required placeholder="Confirmez votre mot de passe" />
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                    <option value="etudiant">Etudiant</option>
+                    <option value="enseignant">Enseignant</option>
+                </select>
             </div>
             <button type="submit" class="btn">S'inscrire</button>
             <div class="login-link">
-                Déjà un compte ? <a href="#">Se connecter</a>
+                Déjà un compte ? <a href="./login.php">Se connecter</a>
             </div>
         </form>
     </div>

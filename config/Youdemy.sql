@@ -2,33 +2,31 @@ CREATE DATABASE Youdemy;
 
 use Youdemy;
 
-CREATE TABLE User (
+CREATE TABLE user (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    role ENUM('Student', 'Teacher', 'Admin') NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('Etudiant', 'Enseignant', 'Admin') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE Category (
+CREATE TABLE category (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE NOT NULL,
     description TEXT
 );
 
-CREATE TABLE Course (
+CREATE TABLE course (
     course_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     content_url VARCHAR(255) NOT NULL,  -- Lien vers la vidéo ou le document
     category_id INT NOT NULL,  -- Référence à la catégorie du cours
-    enseignant_id INT NOT NULL,  -- Référence à l'enseignant
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (category_id) REFERENCES Category(category_id),
-    FOREIGN KEY (enseignant_id) REFERENCES User(user_id)
+    FOREIGN KEY (category_id) REFERENCES Category(category_id)
 );
 
 CREATE TABLE Tag (
