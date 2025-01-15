@@ -11,6 +11,7 @@ class AuthController{
             $email=htmlspecialchars($_POST['email']);
             $password=htmlspecialchars($_POST['password']);
             $role=htmlspecialchars($_POST['role']);
+            
             $passwordHached=password_hash($password,PASSWORD_DEFAULT);
 
             if(empty($name) || empty($email) || empty($role) || empty($password)){
