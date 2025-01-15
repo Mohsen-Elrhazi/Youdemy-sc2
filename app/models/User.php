@@ -1,15 +1,15 @@
-<<?php 
+<?php 
+namespace Youdemy\App\Models;
 
 class User{
     private $userID;
     private $username;
     private $email;
-    private $password;
     private $role;
-    private $status;
+    private $password;
 
 
-    public function __construct($username, $email, $password,$userID=null,$role=null,){
+    public function __construct($username, $email, $role, $password, $userID=null){
         $this->userID=$userID;
         $this->username=$username;
         $this->email=$email;

@@ -1,0 +1,19 @@
+{
+    "name": "youcode/youdemy",
+    "description": "Site web de formation Youdemy",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Youdemy\\App\\": "app/",
+            "Youdemy\\Config\\": "config/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohsen Elrhazi",
+            "email": "mohsenelrhazi3@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
