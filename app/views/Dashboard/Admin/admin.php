@@ -24,6 +24,7 @@ include './pages/commande.php';
 break;
 case 'categorie':
 include './pages/categorie.php';
+
 break;
 case 'analyses':
     $titre="analyses";

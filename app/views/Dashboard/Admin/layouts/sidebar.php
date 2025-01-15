@@ -27,7 +27,7 @@
 
         <li>
             <a href="admin.php?page=categorie">
-                <i class="bx bx-user"></i>
+                <i class="fa-solid fa-list"></i>
                 <span class="links_name">Catégories</span>
             </a>
         </li>
