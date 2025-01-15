@@ -33,7 +33,7 @@
         </li>
 
         <li>
-            <a href="index.php?page=gerer_categories">
+            <a href="admin.php?page=modifier_categorie">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span class="links_name">Modifier Catégorie</span>
             </a>

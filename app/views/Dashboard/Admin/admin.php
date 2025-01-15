@@ -24,11 +24,9 @@ include './pages/commande.php';
 break;
 case 'categorie':
 include './pages/categorie.php';
-
 break;
-case 'analyses':
-    $titre="analyses";
-include './pages/analyses.php';
+case 'modifier_categorie':
+include './pages/modifier_categorie.php';
 break;
 case 'stock':
 include './pages/stock.php';
