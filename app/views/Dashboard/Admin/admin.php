@@ -10,17 +10,17 @@ include './layouts/navbar.php';
 include './layouts/homeContent.php';
 
 // Recuperer la page depuis l'URL
- $page = $_GET['page'] ?? '';
+ $page = $_GET['page'] ?? 'enseignants';
 
 switch ($page) {
- case 'edit_produit':
-include './pages/edit_produit.php';
+ case 'enseignants':
+include './pages/enseignants.php';
 break;
-case 'produit':
-include './pages/produit.php';
+case 'utilisateurs':
+include './pages/utilisateurs.php';
 break;
-case 'commande':
-include './pages/commande.php';
+case 'cours':
+include './pages/cours.php';
 break;
 case 'categorie':
 include './pages/categorie.php';
@@ -37,15 +37,15 @@ break;
 case 'messages':
 include './pages/messages.php';
 break;
-case 'configuration':
-include './pages/configuration.php';
+case 'analyses':
+include './pages/analyses.php';
 break;
 case 'logout':
 include './pages/logout.php';
 break;
 case 'ajouter_produit':
 default:
-include './pages/ajouter_produit.php';
+include './pages/enseignants.php';
 break;
 }
 

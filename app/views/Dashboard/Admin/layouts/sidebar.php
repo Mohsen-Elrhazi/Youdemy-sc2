@@ -6,20 +6,20 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="index.php?page=valider_enseignant">
+            <a href="admin.php?page=enseignants">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 <span class="links_name">Enseignants</span>
             </a>
         </li>
         <li>
-            <a href="index.php?page=gerer_user">
+            <a href="admin.php?page=utilisateurs">
                 <!-- <i class="bx bx-user"></i> -->
                 <i class="fa-solid fa-users"></i>
                 <span class="links_name">Utilisateurs</span>
             </a>
         </li>
         <li>
-            <a href="index.php?page=gerer_cours">
+            <a href="admin.php?page=cours">
                 <i class="fa-solid fa-book"></i>
                 <span class="links_name">Cours</span>
             </a>
@@ -53,18 +53,18 @@
 
 
         <li>
-            <a href="index.php?page=analyses">
+            <a href="admin.php?page=analyses">
                 <i class="bx bx-pie-chart-alt-2"></i>
                 <span class="links_name">Analyses</span>
             </a>
         </li>
 
-        <li>
+        <!-- <li>
             <a href="index.php?page=messages">
                 <i class="bx bx-message"></i>
                 <span class="links_name">Messages</span>
             </a>
-        </li>
+        </li> -->
         <li>
             <a href="index.php?page=configuration">
                 <i class="bx bx-cog"></i>
@@ -72,7 +72,7 @@
             </a>
         </li>
         <li class="log_out">
-            <a href="index.php?page=logout">
+            <a href="admin.php?page=logout">
                 <i class="bx bx-log-out"></i>
                 <span class="links_name">Déconnexion</span>
             </a>
