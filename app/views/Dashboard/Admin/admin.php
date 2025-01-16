@@ -28,11 +28,11 @@ break;
 case 'modifier_categorie':
 include './pages/modifier_categorie.php';
 break;
-case 'stock':
-include './pages/stock.php';
+case 'tag':
+include './pages/tag.php';
 break;
-case 'utilisateur':
-include './pages/utilisateur.php';
+case 'modifier_tag':
+include './pages/modifier_tag.php';
 break;
 case 'messages':
 include './pages/messages.php';

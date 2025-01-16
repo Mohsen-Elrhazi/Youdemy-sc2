@@ -39,13 +39,13 @@
             </a>
         </li>
         <li>
-            <a href="index.php?page=gerer_tags">
+            <a href="admin.php?page=tag">
                 <i class="fa-solid fa-tag"></i>
                 <span class="links_name">Tags</span>
             </a>
         </li>
         <li>
-            <a href="index.php?page=gerer_tags">
+            <a href="admin.php?page=modifier_tag">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span class="links_name">Modifier Tag</span>
             </a>

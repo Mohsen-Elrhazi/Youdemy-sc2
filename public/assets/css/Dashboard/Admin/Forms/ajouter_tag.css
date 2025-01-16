@@ -9,16 +9,13 @@
  }
 
  body {
-     background: linear-gradient(135deg, #f0f4ff 0%, #e5e9ff 100%);
-     min-height: 100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-family: 'Segoe UI', system-ui, sans-serif;
+
  }
 
  /* Style du bouton */
  .modal-trigger {
+    display:flex;
+    justify-self: end;
      background: var(--primary-color);
      color: white;
      padding: 1rem 2rem;
