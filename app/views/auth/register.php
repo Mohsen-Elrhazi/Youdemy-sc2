@@ -1,49 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="../../../public/assets/css/auth/register.css" />
-
-    <!-- link cdn bootstrap -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-
-    <title>Register</title>
+    <title>Inscription</title>
 
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="title">Créer un compte</h1>
-        <form method="POST">
-            <div class="form-group">
-                <label for="name">Nom complet</label>
-                <input type="text" id="name" placeholder="Entrez votre nom" name="username" />
+    <div class="signup-container">
+        <form class="signup-form">
+            <div class="signup-header">
+                <h1>S'inscrire et commencer à apprendre</h1>
             </div>
+
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Entrez votre email" name="email" />
+                <label for="fullname">Nom complet</label>
+                <input type="text" id="fullname" class="form-control" required>
             </div>
+
             <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" placeholder="Créez un mot de passe" name="password" />
-            </div>
-            <div class="form-group">
-                <label for="role">Role</label>
-                <select id="role" name="role" name="role">
-                    <option value="etudiant">Etudiant</option>
-                    <option value="enseignant">Enseignant</option>
+                <label for="role">Vous êtes</label>
+                <select id="role" class="form-control" required>
+                    <option value="">Sélectionnez votre rôle</option>
+                    <option value="student">Étudiant</option>
+                    <option value="teacher">Enseignant</option>
                 </select>
             </div>
-            <button type="submit" class="btn" name="register">S'inscrire</button>
-            <div class="login-link">
-                Déjà un compte ? <a href="./login.php">Se connecter</a>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="nom@exemple.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="signup-btn">S'inscrire</button>
+
+
+
+            <div class="signin-prompt">
+                Vous avez déjà un compte ? <a href="#">Se connecter</a>
             </div>
         </form>
     </div>
+
+
 </body>
 
 </html>
