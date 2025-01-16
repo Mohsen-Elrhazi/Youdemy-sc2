@@ -10,43 +10,30 @@ include './layouts/navbar.php';
 include './layouts/homeContent.php';
 
 // Recuperer la page depuis l'URL
-$page = $_GET['page'] ?? 'ajouter_produit';
+$page = $_GET['page'] ?? 'ajouter_cours';
 
 switch ($page) {
- case 'edit_produit':
-include './pages/edit_produit.php';
+ case 'ajouter_cours':
+include './pages/ajouter_cours.php';
 break;
-case 'produit':
-include './pages/produit.php';
+case 'modifier_cours':
+include './pages/modifier_cours.php';
 break;
-case 'commande':
-include './pages/commande.php';
+case 'cours':
+include './pages/cours.php';
 break;
-case 'client':
-include './pages/client.php';
+case 'inscriptions':
+include './pages/inscriptions.php';
 break;
 case 'analyses':
-    $titre="analyses";
 include './pages/analyses.php';
-break;
-case 'stock':
-include './pages/stock.php';
-break;
-case 'utilisateur':
-include './pages/utilisateur.php';
-break;
-case 'messages':
-include './pages/messages.php';
-break;
-case 'configuration':
-include './pages/configuration.php';
 break;
 case 'logout':
 include './pages/logout.php';
 break;
-case 'ajouter_produit':
+// case 'ajouter_cours':
 default:
-include './pages/ajouter_produit.php';
+include './pages/ajouter_cours.php';
 break;
 }
 
