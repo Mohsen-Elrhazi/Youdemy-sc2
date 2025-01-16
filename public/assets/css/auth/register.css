@@ -7,10 +7,18 @@
 .signup-container {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     background-color: #f7f9fa;
+}
+
+.back-home{
+    text-decoration: none;
+    font-size:40px;
+    color:black;
+    align-self: start;
 }
 
 .signup-form {
@@ -20,6 +28,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     width: 100%;
     max-width: 480px;
+    margin-top: -10px;
 }
 
 .signup-header {

@@ -49,8 +49,8 @@
 
         <div class="navbar-right">
             <a href="#" class="business-link">Udemy Business</a>
-            <button class="login-btn">Se connecter</button>
-            <button class="signup-btn">S'inscrire</button>
+            <a href="../../../index.php?page=login" class="login-btn">Se connecter</a>
+            <a href="../../../index.php?page=register" class="signup-btn">S'inscrire</a>
             <div class="cart-container">
                 <i class="fas fa-shopping-cart cart-icon"></i>
                 <span class="cart-badge">0</span>

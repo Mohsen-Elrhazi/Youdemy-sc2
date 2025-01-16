@@ -15,6 +15,7 @@
 
 <body>
     <div class="signin-container">
+        <a class="back-home" href="./../../../index.php?page=platform"><i class="fa-solid fa-arrow-left-long"></i></a>
         <form class="signin-form">
             <div class="signin-header">
                 <h1>Se connecter</h1>
@@ -37,7 +38,7 @@
             <button type="submit" class="signin-btn">Se connecter</button>
 
             <div class="signup-prompt">
-                Vous n'avez pas de compte ? <a href="#">S'inscrire</a>
+                Vous n'avez pas de compte ? <a href="./../../../index.php?page=register">S'inscrire</a>
             </div>
         </form>
     </div>

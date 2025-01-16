@@ -15,6 +15,8 @@
 
 <body>
     <div class="signup-container">
+        <a class="back-home" href="./../../../index.php?page=platform"><i class="fa-solid fa-arrow-left-long"></i></a>
+
         <form class="signup-form">
             <div class="signup-header">
                 <h1>S'inscrire et commencer à apprendre</h1>
@@ -49,7 +51,7 @@
 
 
             <div class="signin-prompt">
-                Vous avez déjà un compte ? <a href="#">Se connecter</a>
+                Vous avez déjà un compte ? <a href="./../../../index.php?page=login">Se connecter</a>
             </div>
         </form>
     </div>

@@ -156,6 +156,8 @@
 
 .login-btn,
 .signup-btn {
+    text-decoration: none;
+    color: black;
     padding: 0.8rem 1.2rem;
     border: 1px solid #1c1d1f;
     background: white;

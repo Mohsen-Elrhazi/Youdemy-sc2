@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$page=$_GET['page'];
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-<h1>heloo</h1>
-
-</html>
+switch ($page) {
+    case 'register':
+         include 'app/views/Auth/register.php';
+    break;
+    case 'login':
+        include 'app/views/Auth/login.php';
+    break;
+    case 'platform':
+        include 'app/views/Platform/platform.php';
+    break;
+    default:
+    echo "page introuvable";
+    break;
+}
+?>
