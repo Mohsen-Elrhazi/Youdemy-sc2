@@ -9,25 +9,25 @@ use Youdemy\App\Controllers\TagController;
 session_start(); 
 
 $page = $_GET['page'] ?? 'platform';
-$Authcontroller = new AuthController();
+$AuthController = new AuthController();
 $TagController=new TagController();
 
 switch ($page) {
     case 'register':
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             // si c'est une soumission de formulaire
-            $Authcontroller->register();
+            $AuthController->register();
         } else {
             // si c'est juste l'affichage du formulaire
-            $Authcontroller->showRegisterForm();
+            $AuthController->showRegisterForm();
         }
         break;
 
     case 'login':
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-            $Authcontroller->login();
+            $AuthController->login();
         } else {
-            $Authcontroller->showLoginForm();
+            $AuthController->showLoginForm();
         }
         break;
 

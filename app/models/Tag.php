@@ -10,11 +10,11 @@ public function __construct($name){
 }
 
 public function getTagID(){
-    return $this->$tagID;
+    return $this->tagID;
 }
 
 public function getName(){
-    return $this->$name;
+    return $this->name;
 }
 
 public function setTName($name){

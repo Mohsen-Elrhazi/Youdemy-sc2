@@ -10,6 +10,6 @@ class validation{
         return true;
     }
 }
-validation::validateFields($fields);
+// validation::validateFields($fields);
 
 ?>

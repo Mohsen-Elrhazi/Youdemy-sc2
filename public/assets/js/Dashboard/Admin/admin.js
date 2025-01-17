@@ -28,19 +28,19 @@ setTimeout(function () {
   }
 }, 2000);
 
-//  les button de ctiver et desactiver dans page client
-document.querySelectorAll(".status").forEach((statusClient, index) => {
-  const btn = document.querySelectorAll(".status-btn")[index];
+//  les button de ativer et desactiver dans page client
+// document.querySelectorAll(".status").forEach((statusClient, index) => {
+//   const btn = document.querySelectorAll(".status-btn")[index];
 
-  const isActive = statusClient.textContent.trim() === "active";
+//   const isActive = statusClient.textContent.trim() === "active";
 
-  if (isActive) {
-    btn.classList.add("btn-danger");
-    btn.classList.remove("btn-success");
-    btn.textContent = "Désactiver";
-  } else {
-    btn.classList.add("btn-success");
-    btn.classList.remove("btn-danger");
-    btn.textContent = "Activer";
-  }
-});
+//   if (isActive) {
+//     btn.classList.add("btn-danger");
+//     btn.classList.remove("btn-success");
+//     btn.textContent = "Désactiver";
+//   } else {
+//     btn.classList.add("btn-success");
+//     btn.classList.remove("btn-danger");
+//     btn.textContent = "Activer";
+//   }
+// });

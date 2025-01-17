@@ -22,7 +22,7 @@ class AuthController {
             $password = htmlspecialchars($_POST['password']);
             $role = htmlspecialchars($_POST['role']);
 
-            if ($this->validateFields([$name, $email, $role, $password])) {
+            if (Validation::validateFields([$name, $email, $role, $password])) {
                 if ($this->userRepositorie->emailExists($email)) {
                     $_SESSION['error'] = "Cet email est déjà utilisé.";
                     header("Location: ../../../../index.php?page=register");
@@ -46,13 +46,6 @@ class AuthController {
             }
     }
 
-    // Fonction de validation des champs
-    private function validateFields($fields) {
-        foreach ($fields as $field) {
-            if(empty($field)) return false;
-        }
-        return true;
-    }
 
     public function showLoginForm() {
         require_once 'app/views/Auth/login.php';
@@ -62,7 +55,7 @@ class AuthController {
             $email=htmlspecialchars($_POST['email']);
             $password=htmlspecialchars($_POST['password']);
 
-            if($this->validateFields([$email, $password])){
+            if(Validation::validateFields([$email, $password])){
               $user= $this->userRepositorie->getUserByEmail($email);
                
               if($user){
