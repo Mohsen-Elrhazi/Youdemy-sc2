@@ -166,6 +166,88 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Grille principale -->
+                <div class="row">
+                    <!-- Colonne À propos -->
+                    <div class="col-md-3 mb-4">
+                        <h5>À propos de Udemy</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Qui sommes-nous</a></li>
+                            <li><a href="#">Carrières</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Investisseurs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Colonne Ressources -->
+                    <div class="col-md-3 mb-4">
+                        <h5>Ressources</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Centre d'aide</a></li>
+                            <li><a href="#">Devenir formateur</a></li>
+                            <li><a href="#">Udemy Business</a></li>
+                            <li><a href="#">Guide des apprenants</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Colonne Légal -->
+                    <div class="col-md-3 mb-4">
+                        <h5>Légal</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Conditions d'utilisation</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">Paramètres des cookies</a></li>
+                            <li><a href="#">Mentions légales</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Colonne Newsletter -->
+                    <div class="col-md-3 mb-4">
+                        <h5>Restez informé</h5>
+                        <p class="newsletter-text">Inscrivez-vous à notre newsletter</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Votre email" class="form-control mb-2">
+                            <button class="btn btn-primary w-100">S'inscrire</button>
+                        </div>
+                        <div class="social-links mt-3">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barre de séparation -->
+                <hr class="footer-divider">
+
+                <!-- Bas du footer -->
+                <div class="footer-bottom">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="copyright">© 2024 Udemy. Tous droits réservés.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <div class="language-selector">
+                                <i class="fas fa-globe"></i>
+                                <select class="footer-select">
+                                    <option value="fr">Français</option>
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="de">Deutsch</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Bootstrap JS et ses dépendances -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>

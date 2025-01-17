@@ -16,26 +16,27 @@
 <body>
     <div class="signin-container">
         <a class="back-home" href="./../../../index.php?page=platform"><i class="fa-solid fa-arrow-left-long"></i></a>
-        <form class="signin-form">
-            <div class="signin-header">
+
+        <form class="signin-form" method="post" action="../../../index.php?page=login">
+            <div class=" signin-header">
                 <h1>Se connecter</h1>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="nom@exemple.com" required />
+                <input type="email" id="email" class="form-control" placeholder="nom@exemple.com" name="email" />
             </div>
 
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" class="form-control" placeholder="••••••••" required />
+                <input type="password" id="password" class="form-control" placeholder="••••••••" name="password" />
             </div>
 
             <div class="forgot-password">
                 <a href="#">Mot de passe oublié ?</a>
             </div>
 
-            <button type="submit" class="signin-btn">Se connecter</button>
+            <button type="submit" class="signin-btn" name="login">Se connecter</button>
 
             <div class="signup-prompt">
                 Vous n'avez pas de compte ? <a href="./../../../index.php?page=register">S'inscrire</a>

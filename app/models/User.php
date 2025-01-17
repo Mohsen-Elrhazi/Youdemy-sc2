@@ -11,7 +11,6 @@ class User{
 
 
     public function __construct($username, $email, $role, $password, $status){
-        $this->userID=$userID;
         $this->username=$username;
         $this->email=$email;
         $this->password=$password;
