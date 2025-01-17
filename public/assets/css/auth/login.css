@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.alert{
+    width:80%;
+    font-size: 17px;
+}
+
 .signin-container {
     min-height: 100vh;
     display: flex;

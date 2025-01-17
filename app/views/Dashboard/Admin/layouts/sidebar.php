@@ -6,46 +6,46 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="admin.php?page=enseignants">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=enseignants">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 <span class="links_name">Enseignants</span>
             </a>
         </li>
         <li>
-            <a href="admin.php?page=utilisateurs">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=utilisateurs">
                 <!-- <i class="bx bx-user"></i> -->
                 <i class="fa-solid fa-users"></i>
                 <span class="links_name">Utilisateurs</span>
             </a>
         </li>
         <li>
-            <a href="admin.php?page=cours">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=cours">
                 <i class="fa-solid fa-book"></i>
                 <span class="links_name">Cours</span>
             </a>
         </li>
 
         <li>
-            <a href="admin.php?page=categorie">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=categorie">
                 <i class="fa-solid fa-list"></i>
                 <span class="links_name">Catégories</span>
             </a>
         </li>
 
         <li>
-            <a href="admin.php?page=modifier_categorie">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=modifier_categorie">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span class="links_name">Modifier Catégorie</span>
             </a>
         </li>
         <li>
-            <a href="admin.php?page=tag">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=tag">
                 <i class="fa-solid fa-tag"></i>
                 <span class="links_name">Tags</span>
             </a>
         </li>
         <li>
-            <a href="admin.php?page=modifier_tag">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=modifier_tag">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span class="links_name">Modifier Tag</span>
             </a>
@@ -53,7 +53,7 @@
 
 
         <li>
-            <a href="admin.php?page=analyses">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=analyses">
                 <i class="bx bx-pie-chart-alt-2"></i>
                 <span class="links_name">Analyses</span>
             </a>
@@ -66,13 +66,13 @@
             </a>
         </li> -->
         <li>
-            <a href="index.php?page=configuration">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=config">
                 <i class="bx bx-cog"></i>
                 <span class="links_name">Configuration</span>
             </a>
         </li>
         <li class="log_out">
-            <a href="admin.php?page=logout">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=logout">
                 <i class="bx bx-log-out"></i>
                 <span class="links_name">Déconnexion</span>
             </a>

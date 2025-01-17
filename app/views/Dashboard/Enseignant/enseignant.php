@@ -1,8 +1,5 @@
 <?php
-    $titre="dashboard";
- 
-  
-    
+     
 include './layouts/header.php';
 include './layouts/sidebar.php';
 include './layouts/section.php';

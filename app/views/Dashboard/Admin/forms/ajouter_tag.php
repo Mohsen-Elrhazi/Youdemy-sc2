@@ -25,14 +25,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="tagForm">
+                    <form id="tagForm" method="post" action="/index.php?page=ajouterTag">
                         <div class="form-group">
                             <label class="form-label" for="tagName">Nom du tag</label>
-                            <input type="text" class="form-control" id="tagName" required placeholder="ex: JavaScript">
+                            <input type="text" class="form-control" id="tagName" placeholder="ex: JavaScript"
+                                name="tagName">
+
                         </div>
-                        <div class="modal-footer">
+                        <div class=" modal-footer">
                             <button type="button" class="btn-cancel" data-bs-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn-submit">Créer le tag</button>
+                            <button type="submit" class="btn-submit" name="ajouterTag">Créer le tag</button>
                         </div>
                     </form>
                 </div>

@@ -1,3 +1,3 @@
 <?php 
-echo "page enseignants";
+echo "page des  enseignants";
 ?>

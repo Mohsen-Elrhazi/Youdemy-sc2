@@ -3,6 +3,7 @@ namespace Youdemy\App\Repositories;
 
 use Youdemy\App\Models\User;
 use Youdemy\Config\Database;
+use PDO;
 
 class UserRepositorie {
    

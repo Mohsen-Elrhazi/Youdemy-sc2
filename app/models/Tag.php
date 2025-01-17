@@ -5,9 +5,8 @@ class Tag{
     private $tagID ;
     private $name;
 
-public function __construct($name, $tagID){
+public function __construct($name){
     $this->name=$name;
-    $this->tagID=$tagID;
 }
 
 public function getTagID(){
@@ -16,6 +15,10 @@ public function getTagID(){
 
 public function getName(){
     return $this->$name;
+}
+
+public function setTName($name){
+    $this->name=$name;
 }
 
 }
