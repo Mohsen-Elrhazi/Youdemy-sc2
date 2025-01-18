@@ -58,7 +58,10 @@ class TagController{
     // function delete tag
     public function deleteTag($id){
         $this->tagRepositorie->deleteTag($id);
-    }
+        $_SESSION['tagDeleted']='Tag a été supprimer';
+            header("location:/app/views/Dashboard/Admin/admin.php?page=tag");
+            exit;
+          }
     
 }
 ?>

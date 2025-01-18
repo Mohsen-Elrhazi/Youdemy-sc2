@@ -1,6 +1,5 @@
 <?php
 
-
 use Youdemy\App\Controllers\TagController;
 use Youdemy\App\Models\Tag;
 
@@ -8,9 +7,7 @@ $tagController = new TagController();
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $tagController->deleteTag($id);
-    echo "<div class=' text text-center alert alert-success '>Tag a été supprimer</div>";
-
+    $tagController->deleteTag($id); 
 }
 $tags = $tagController->afficherTags();
 

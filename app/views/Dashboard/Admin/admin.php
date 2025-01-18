@@ -8,7 +8,7 @@
     
     require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
     
-    
+    ob_start();
     session_start();
     
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/header.php';
@@ -45,6 +45,10 @@ case 'tag':
         echo "<div class='alert alert-success text-center'>{$_SESSION['success']}</div>";
         unset($_SESSION['success']);
     }
+    if (isset($_SESSION['tagDeleted'])) {
+        echo "<div class='alert alert-success text-center'>{$_SESSION['tagDeleted']}</div>";
+        unset($_SESSION['tagDeleted']);
+    }
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/tag.php';
 break;
 case 'modifier_tag':
@@ -69,5 +73,5 @@ include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/endSection
 
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/footer.php';
 
-
+ob_end_flush();
 ?>
