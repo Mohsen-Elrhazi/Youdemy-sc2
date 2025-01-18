@@ -1,4 +1,5 @@
 <?php  
+
 namespace Youdemy\App\Controllers;
 
 use Youdemy\App\Models\Tag;
@@ -29,7 +30,35 @@ class TagController{
                 exit;
             }
         }
-        
     }
+
+    public function afficherTags() {
+        $tags = $this->tagRepositorie->displayTags();
+        return $tags; 
+    }
+
+    public function rendreRow(Tag $tag) {
+        return "
+            <tr>
+            <td>" . $tag->getTagID() . "</td>   
+                <td>" . $tag->getName() . "</td>
+                <td>
+                    <a class='btn btn-warning text-light text-decoration-none px-4 me-4' 
+                       href='?page=modifier_tag&id=" . $tag->getTagID() . "'>
+                        Edit
+                    </a>
+                    <a class='btn btn-danger text-light text-decoration-none' 
+                       href='?page=tag&id=" . $tag->getTagID() . "'>
+                        Delete
+                    </a>
+                </td>
+            </tr>";
+    }
+
+    // function delete tag
+    public function deleteTag($id){
+        $this->tagRepositorie->deleteTag($id);
+    }
+    
 }
 ?>

@@ -1,10 +1,13 @@
 <?php
         // if (isset($_SESSION['role'])!='Admin') {
-        //     // session_start();
+        // session_start();
         //     unset($_SESSION['role']);
         // }
         
     // $titre="Admin";
+    
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+    
     
     session_start();
     

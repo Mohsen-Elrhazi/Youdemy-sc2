@@ -1,14 +1,35 @@
-<?php 
-    // if (isset($_SESSION['error'])) {
-    //     session_start();
-    //     echo "<div class='alert alert-danger text-center'>".$_SESSION['error']."</div>";
-    //     unset($_SESSION['error']);
-    // }
-    // if (isset($_SESSION['success'])) {
-    //     echo "<div class='alert alert-success text-center'>{$_SESSION['success']}</div>";
-    //     unset($_SESSION['success']);
-    // }
-    require_once './forms/ajouter_tag.php';
-    // echo "page tag";
+<?php
+
+
+use Youdemy\App\Controllers\TagController;
+use Youdemy\App\Models\Tag;
+
+$tagController = new TagController();
+
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $tagController->deleteTag($id);
+    echo "<div class=' text text-center alert alert-success '>Tag a été supprimer</div>";
+
+}
+$tags = $tagController->afficherTags();
+
+require_once './forms/ajouter_tag.php';
 
 ?>
+<table class="table table-bordered mt-2 text-center align-middle">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        foreach ($tags as $tag){
+        echo $tagController->rendreRow($tag);
+        }
+          ?>
+    </tbody>
+</table>

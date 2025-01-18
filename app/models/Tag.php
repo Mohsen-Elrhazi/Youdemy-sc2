@@ -5,7 +5,8 @@ class Tag{
     private $tagID ;
     private $name;
 
-public function __construct($name){
+public function __construct($name,$tagID=null){
+    $this->tagID=$tagID;
     $this->name=$name;
 }
 
