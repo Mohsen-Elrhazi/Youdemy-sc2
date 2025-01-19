@@ -14,13 +14,13 @@ class TagController{
     }
 
     public function ajouterTag(){
-        session_start();
+        // session_start();
         if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['ajouterTag'])){
             $name=htmlspecialchars($_POST['tagName']);
             
             if(Validation::validateFields([$name])){
                 $tag=new Tag($name);
-                $this->tagRepositorie->saveTag($tag);
+                $this->tagRepositorie->save($tag);
                 $_SESSION['success']= 'Tag a été ajouter avec success';
                 header("location:/app/views/Dashboard/Admin/admin.php?page=tag");
                 exit;
@@ -33,7 +33,7 @@ class TagController{
     }
 
     public function afficherTags() {
-        $tags = $this->tagRepositorie->displayTags();
+        $tags = $this->tagRepositorie->display();
         return $tags; 
     }
 
@@ -57,11 +57,37 @@ class TagController{
 
     // function delete tag
     public function deleteTag($id){
-        $this->tagRepositorie->deleteTag($id);
+        $this->tagRepositorie->delete($id);
         $_SESSION['tagDeleted']='Tag a été supprimer';
             header("location:/app/views/Dashboard/Admin/admin.php?page=tag");
             exit;
-          }
+    }
+
+    // edit tag
+    public function editTag($id){
+            $tag=$this->tagRepositorie->findById($id);
+            if($tag){
+             if(isset($_POST['edit'])){
+             $name=htmlspecialchars($_POST['name']);
+            if(Validation::validateFields([$name])){
+                $tag->setName($name);
+                $this->tagRepositorie->edit($tag);
+                $_SESSION['success'] = 'Tag modifié avec succès';
+                header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
+                exit;
+              }else{
+                $_SESSION['error'] = 'Veuillez remplir tous les champs';
+                header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=".$id);
+                exit;
+              }
+             }
+            return $tag;
+            }else{
+                $_SESSION['error'] = 'Tag non trouvé';
+                header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
+            exit;
+            }    
+    }
     
 }
 ?>

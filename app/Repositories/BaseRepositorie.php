@@ -5,7 +5,7 @@ namespace Youdemy\App\Repositories;
 use Youdemy\Config\Database;
 use PDO;
 
-abstract class BaseRepository {
+abstract class BaseRepositorie {
 
     protected $conn;
 
@@ -21,7 +21,6 @@ abstract class BaseRepository {
 
     abstract public function display();
 
-    // Methode abstraite pour trouver un objet par son ID
-    // abstract public function findById($id);
+    abstract public function findById(int $id);
 }
 ?>

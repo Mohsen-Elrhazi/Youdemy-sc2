@@ -18,7 +18,7 @@ public function getName(){
     return $this->name;
 }
 
-public function setTName($name){
+public function setName($name){
     $this->name=$name;
 }
 

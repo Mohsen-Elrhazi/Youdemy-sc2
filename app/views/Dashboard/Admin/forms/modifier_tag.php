@@ -16,14 +16,14 @@
 <body>
     <div class="form-container">
         <h1 class="form-title">Modifier un Tag</h1>
-        <form id="tagForm">
-            <div class="form-group">
+        <form id="tagForm" method="post">
+            <div class=" form-group">
                 <label class="form-label" for="tagName">Nom du tag</label>
-                <input type="text" class="form-control" id="tagName" required placeholder="ex: JavaScript">
+                <input type="text" class="form-control" id="tagName" placeholder="ex: JavaScript" name="name">
             </div>
             <div class="form-actions">
                 <button type="reset" class="btn-cancel">Annuler</button>
-                <button type="submit" class="btn-submit">Modifier</button>
+                <button type="submit" class="btn-submit" name="edit">Modifier</button>
             </div>
         </form>
     </div>

@@ -5,21 +5,22 @@ use Youdemy\App\Models\Tag;
 use Youdemy\Config\Database;
 use PDO;
 
-class TagRepositorie {
-    private $conn;
+class TagRepositorie extends BaseRepositorie {
 
-    public function __construct(){
-        $this->conn=Database::getConnection();
-    }
-
-    public function saveTag(Tag $tag){
-        $stmt=$this->conn->prepare("INSERT INTO tag (name) values(:name)");
+    public function save(object $object){
+        if($object instanceof Tag){
+             $stmt=$this->conn->prepare("INSERT INTO tag (name) values(:name)");
         $stmt->execute([
-            ':name' => $tag->getName()
+            ':name' => $object->getName()
         ]);
+        }else {
+            // Si l'objet n'est pas une instance de Tag, gérer l'erreur ou exception
+            throw new InvalidArgumentException("L'objet passé n'est pas une instance de Tag.");
+        }
+        
     }
-
-    public function displayTags() {
+// function afficher lastags
+    public function display() {
         $stmt = $this->conn->prepare("SELECT * FROM tag ORDER BY tag_id ASC");
         $stmt->execute(); 
         $tags = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,19 +33,32 @@ class TagRepositorie {
     }
 
     // delete tag
-    public function deleteTag($id) {
+    public function delete($id) {
         $stmt = $this->conn->prepare("DELETE FROM tag WHERE tag_id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
 
     // function edit tag
-    public function editTag(Tag $tag) {
-        $stmt = $this->$conn->prepare("UPDATE tag SET name = :name WHERE tag_id = :id");
-        return $stmt->execute([
-            ':name' => $name,
-            ':id' => $tagID
-        ]);
+    public function edit(object $object) {
+        if($object instanceof Tag){
+              $stmt = $this->conn->prepare("UPDATE tag SET name = :name WHERE tag_id = :id");
+             $stmt->execute([
+              ':name' => $object->getName(),
+              ':id' => $object->getTagID()
+             ]);
+        }else {
+            throw new InvalidArgumentException("L'objet passé n'est pas une instance de Tag.");
+        }
+    }
+
+    // function trouver un objet par son id
+    public function findById($id){
+        $stmt=$this->conn->prepare("select * from tag where tag_id= :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $tag = $stmt->fetch(PDO::FETCH_ASSOC);
+        return new Tag($tag['name'], $tag['tag_id']);
     }
 
     

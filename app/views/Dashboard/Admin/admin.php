@@ -53,6 +53,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/tag.php';
 break;
 case 'modifier_tag':
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/modifier_tag.php';
+    if (isset($_SESSION['error'])) {
+        echo "<div class='alert alert-danger text-center'>".$_SESSION['error']."</div>";
+        unset($_SESSION['error']);
+    }
+
 break;
 case 'messages':
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/messages.php';
