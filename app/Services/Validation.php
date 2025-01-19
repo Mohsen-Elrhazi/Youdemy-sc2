@@ -20,7 +20,8 @@ class validation{
             ':valueColumn' => $valueColumn,
             ':valueId' => $valueId
         ]);
-        return $stmt->fetchColumn();
+        // return $stmt->fetchColumn();
+        return $stmt->rowCount() >0;
     }
 }
 

@@ -9,6 +9,8 @@ use Youdemy\App\Controllers\TagController;
 session_start(); 
 
 $page = $_GET['page'] ?? 'platform';
+
+
 $AuthController = new AuthController();
 
 switch ($page) {
@@ -31,7 +33,7 @@ switch ($page) {
         break;
 
     case 'platform':
-        include 'app/views/Platform/platform.php';
+        require_once 'app/views/Platform/platform.php';
         break;
         
     case 'enseignant':
@@ -39,7 +41,8 @@ switch ($page) {
     break;
 
     case 'admin':
-        include 'app/views/Dashboard/Admin/admin.php';
+            require_once 'app/views/Dashboard/Admin/admin.php';
+            
     break;
     
     default:

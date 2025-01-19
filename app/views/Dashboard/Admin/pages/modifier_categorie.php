@@ -45,7 +45,8 @@ $category=null;
                     placeholder="Entrez une description pour la catégorie"> <?php echo $category->getDescription(); ?></textarea>
             </div>
             <div class="form-actions">
-                <button type="reset" class="btn-cancel">Annuler</button>
+                <button type="reset" class="btn-cancel"><a class="text-decoration-none"
+                        href=" /app/views/Dashboard/Admin/admin.php?page=categorie">Annuler</a></button>
                 <button type="submit" class="btn-submit" name="edit">Modifier</button>
             </div>
         </form>

@@ -14,13 +14,12 @@ class TagController{
     }
 
     public function ajouterTag(){
-        // session_start();
         if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['ajouterTag'])){
             $name=htmlspecialchars($_POST['tagName']);
  
             if(Validation::validateFields([$name])){
             // Vérifier si un autre ctegory avec ce nom existe
-                if (Validation::columnExists('tag', 'name', $name, 'tag_id', null)) {
+                if (Validation::columnExists('tag', 'name', $name, 'tag_id', 'not null')) {
                     $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
                     header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
                 exit;

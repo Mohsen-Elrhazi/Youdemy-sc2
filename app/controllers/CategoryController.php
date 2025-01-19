@@ -21,7 +21,7 @@ class CategoryController{
             
             if(Validation::validateFields([$name, $description])){
                 // Vérifier si un autre ctegory avec ce nom existe
-                if (Validation::columnExists('category', 'name', $name, 'category_id', null)) {
+                if (Validation::columnExists('category', 'name', $name, 'category_id', 'not null')) {
                    $_SESSION['error'] = 'Un category avec ce nom existe déjà.';
                    header("Location: /app/views/Dashboard/Admin/admin.php?page=categorie");
                 exit;

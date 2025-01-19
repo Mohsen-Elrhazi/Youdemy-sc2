@@ -39,7 +39,8 @@ $tag=null;
                     value="<?php echo $tag->getName(); ?>">
             </div>
             <div class="form-actions">
-                <button type="reset" class="btn-cancel">Annuler</button>
+                <button type="reset" class="btn-cancel"><a class="text-decoration-none"
+                        href=" /app/views/Dashboard/Admin/admin.php?page=tag">Annuler</a></button>
                 <button type="submit" class="btn-submit" name="edit">Modifier</button>
             </div>
         </form>
