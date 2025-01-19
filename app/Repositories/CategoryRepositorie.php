@@ -61,19 +61,4 @@ class CategoryRepositorie extends BaseRepositorie {
         return new Category($category['name'], $category['description'], $category['category_id']);
     }
 
-   
-   
-    // function pour chercher un name si existe
-
-    // public function nameExists($name) {
-    //     $conn = Database::getConnection();
-    //     $stmt = $conn->prepare("SELECT * FROM category WHERE name = :name");
-    //     $stmt->execute([':name' => $name]);
-    //     return $stmt->rowCount() > 0;
-    // }
-
-    
-
-    
-    
 }

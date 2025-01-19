@@ -20,7 +20,7 @@ class TagController{
  
             if(Validation::validateFields([$name])){
             // Vérifier si un autre ctegory avec ce nom existe
-                if (Validation::columnExists('tag', 'name', $name)) {
+                if (Validation::columnExists('tag', 'name', $name, 'tag_id', null)) {
                     $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
                     header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
                 exit;
@@ -79,7 +79,7 @@ class TagController{
                  
                  if(Validation::validateFields([$name])){
                  // Vérifier si un autre tag avec ce nom existe
-                  if (Validation::columnExists('tag', 'name', $name)) {
+                  if (Validation::columnExists('tag', 'name', $name,'tag_id', $id)) {
                     $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
                      header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=" . $id);
                   exit;

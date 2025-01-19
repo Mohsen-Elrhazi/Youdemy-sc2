@@ -21,7 +21,7 @@ class CategoryController{
             
             if(Validation::validateFields([$name, $description])){
                 // Vérifier si un autre ctegory avec ce nom existe
-            if ($this->categoryRepositorie->nameExists($name)) {
+                if (Validation::columnExists('category', 'name', $name, 'category_id', null)) {
                    $_SESSION['error'] = 'Un category avec ce nom existe déjà.';
                    header("Location: /app/views/Dashboard/Admin/admin.php?page=categorie");
                 exit;
@@ -82,7 +82,7 @@ class CategoryController{
              $description=htmlspecialchars($_POST['description']);
             if(Validation::validateFields([$name, $description])){
                   // Vérifier si un autre ctegory avec ce nom existe
-                if ($this->categoryRepositorie->nameExists($name)) {
+                  if (Validation::columnExists('category', 'name', $name, 'category_id', $id)) {
                     $_SESSION['error'] = 'Un category avec ce nom existe déjà.';
                     header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_categorie&id=".$id);
                 exit;

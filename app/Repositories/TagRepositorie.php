@@ -60,19 +60,6 @@ class TagRepositorie extends BaseRepositorie {
         $tag = $stmt->fetch(PDO::FETCH_ASSOC);
         return new Tag($tag['name'], $tag['tag_id']);
     }
-
-    // function pour chercher un name si existe
-    // public function nameExists($name) {
-    //     $conn = Database::getConnection();
-    //     $stmt = $conn->prepare("SELECT * FROM tag WHERE name = :name");
-    //     $stmt->execute([':name' => $name]);
-    //     return $stmt->rowCount() > 0;
-    // }
-
-    
-
-    
-
-    
+ 
     
 }

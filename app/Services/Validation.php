@@ -13,10 +13,13 @@ class validation{
         return true;
     }
 
-    public static function columnExists($table, $column, $value){
+    public static function columnExists($table, $column, $valueColumn, $id, $valueId){
         $conn= Database::getConnection();
-        $stmt = $conn->prepare("SELECT * FROM {$table} WHERE {$column} = :value");
-        $stmt->execute([':value' => $value]);
+        $stmt = $conn->prepare("SELECT * FROM {$table} WHERE {$column} = :valueColumn and {$id} <> :valueId");
+        $stmt->execute([
+            ':valueColumn' => $valueColumn,
+            ':valueId' => $valueId
+        ]);
         return $stmt->fetchColumn();
     }
 }
