@@ -21,19 +21,17 @@ class CategoryController{
             
             if(Validation::validateFields([$name, $description])){
                 // Vérifier si un autre ctegory avec ce nom existe
-            $allCategorys=$this->categoryRepositorie->getAll();
-            foreach($allCategorys as $currentCategory){
-               if (strtolower($currentCategory->getName()) === strtolower($name)  ) {
+            if ($this->categoryRepositorie->nameExists($name)) {
                    $_SESSION['error'] = 'Un category avec ce nom existe déjà.';
                    header("Location: /app/views/Dashboard/Admin/admin.php?page=categorie");
-                   exit;
-               }
-            }
+                exit;
+            }else{
                 $category=new Category($name, $description);
                 $this->categoryRepositorie->save($category);
                 $_SESSION['success']= 'Category a été ajouter avec success';
                 header("location:/app/views/Dashboard/Admin/admin.php?page=categorie");
                 exit;
+            }
             
             }else{
                 $_SESSION['error']= 'Veuillez remplir tous les champs';
@@ -84,14 +82,11 @@ class CategoryController{
              $description=htmlspecialchars($_POST['description']);
             if(Validation::validateFields([$name, $description])){
                   // Vérifier si un autre ctegory avec ce nom existe
-            $allCategorys=$this->categoryRepositorie->getAll();
-            foreach($allCategorys as $currentCategory){
-               if (strtolower($currentCategory->getName()) === strtolower($name) && $currentCategory->getCategoryID() !== $category->getCategoryID() ) {
-                   $_SESSION['error'] = 'Un category avec ce nom existe déjà.';
-                   header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_categorie&id=" . $id);
-                   exit;
-               }
-            }
+                if ($this->categoryRepositorie->nameExists($name)) {
+                    $_SESSION['error'] = 'Un category avec ce nom existe déjà.';
+                    header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_categorie&id=".$id);
+                exit;
+                }else{
                 $category->setName($name);
                 $category->setDescription($description);
                 
@@ -99,6 +94,7 @@ class CategoryController{
                 $_SESSION['success'] = 'Categorie modifié avec succès';
                 header("Location: /app/views/Dashboard/Admin/admin.php?page=categorie");
                 exit;
+                }
               }else{
                 $_SESSION['error'] = 'Veuillez remplir tous les champs';
                 header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_categorie&id=".$id);

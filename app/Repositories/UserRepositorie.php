@@ -26,13 +26,13 @@ class UserRepositorie {
         return $stmt->rowCount() > 0;
     }
 
-    public function updateStatus($userId, $status) {
-        $stmt = $this->db->prepare("UPDATE user SET status = :status WHERE id = :id");
-        return $stmt->execute([
-            ':status' => $status,
-            ':id' => $userId
-        ]);
-    }
+    // public function updateStatus($userId, $status) {
+    //     $stmt = $this->db->prepare("UPDATE user SET status = :status WHERE id = :id");
+    //     return $stmt->execute([
+    //         ':status' => $status,
+    //         ':id' => $userId
+    //     ]);
+    // }
 
     public function getUserByEmail($email) {
         $conn = Database::getConnection();

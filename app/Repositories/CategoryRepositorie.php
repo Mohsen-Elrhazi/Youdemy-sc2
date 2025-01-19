@@ -61,17 +61,15 @@ class CategoryRepositorie extends BaseRepositorie {
         return new Category($category['name'], $category['description'], $category['category_id']);
     }
 
-     // recuperer tous les categoryes
-     public function getAll() {
-        $stmt = $this->conn->query("SELECT * FROM category");
-        $categorys = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-        $categoryObjects = [];
-        foreach ($categorys as $category) {
-            $categoryObjects[] = new Category($category['name'], $category['description'], $category['category_id']);
-        }
-    
-        return $categoryObjects;
+   
+   
+    // function pour chercher un name si existe
+
+    public function nameExists($name) {
+        $conn = Database::getConnection();
+        $stmt = $conn->prepare("SELECT * FROM category WHERE name = :name");
+        $stmt->execute([':name' => $name]);
+        return $stmt->rowCount() > 0;
     }
 
     

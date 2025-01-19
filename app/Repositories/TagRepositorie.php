@@ -61,18 +61,12 @@ class TagRepositorie extends BaseRepositorie {
         return new Tag($tag['name'], $tag['tag_id']);
     }
 
-    
-  // recuperer tous les tags
-    public function getAll() {
-        $stmt = $this->conn->query("SELECT * FROM tag");
-        $tags = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-        $tagObjects = [];
-        foreach ($tags as $tag) {
-            $tagObjects[] = new Tag($tag['name'], $tag['tag_id']);
-        }
-    
-        return $tagObjects;
+    // function pour chercher un name si existe
+    public function nameExists($name) {
+        $conn = Database::getConnection();
+        $stmt = $conn->prepare("SELECT * FROM category WHERE name = :name");
+        $stmt->execute([':name' => $name]);
+        return $stmt->rowCount() > 0;
     }
 
     

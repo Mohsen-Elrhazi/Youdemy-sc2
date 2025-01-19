@@ -81,14 +81,14 @@ class TagController{
                  
                  if(Validation::validateFields([$name])){
                      // Vérifier si un autre tag avec ce nom existe
-                 $allTags=$this->tagRepositorie->getAll();
-                 foreach($allTags as $currentTag){
-                    if (strtolower($currentTag->getName()) === strtolower($name) && $currentTag->getTagID() !== $tag->getTagID()) {
-                        $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
-                        header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=" . $id);
-                        exit;
-                    }
-                }
+                //  $allTags=$this->tagRepositorie->getAll();
+                //  foreach($allTags as $currentTag){
+                //     if (strtolower($currentTag->getName()) === strtolower($name) && $currentTag->getTagID() !== $tag->getTagID()) {
+                //         $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
+                //         header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=" . $id);
+                //         exit;
+                //     }
+                // }
                  $tag->setName($name);
                  $this->tagRepositorie->edit($tag);
                  $_SESSION['success'] = 'Tag modifié avec succès';
