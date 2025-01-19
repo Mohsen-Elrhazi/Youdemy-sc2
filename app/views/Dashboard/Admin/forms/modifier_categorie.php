@@ -19,7 +19,6 @@
     <div class="form-container">
         <div class="form-header">
             <h5>Modifier une Catégorie</h5>
-            <!-- <p>Créez une nouvelle catégorie pour organiser vos cours</p> -->
         </div>
         <form id="categoryForm">
             <div class="form-group">

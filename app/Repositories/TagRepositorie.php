@@ -62,5 +62,23 @@ class TagRepositorie extends BaseRepositorie {
     }
 
     
+  // recuperer tous les tags
+    public function getAll() {
+        $stmt = $this->conn->query("SELECT * FROM tag");
+        $tags = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        $tagObjects = [];
+        foreach ($tags as $tag) {
+            $tagObjects[] = new Tag($tag['name'], $tag['tag_id']);
+        }
+    
+        return $tagObjects;
+    }
+
+    
+
+    
+
+    
     
 }

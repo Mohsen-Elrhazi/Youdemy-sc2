@@ -10,7 +10,6 @@ session_start();
 
 $page = $_GET['page'] ?? 'platform';
 $AuthController = new AuthController();
-$TagController=new TagController();
 
 switch ($page) {
     case 'register':
@@ -43,11 +42,6 @@ switch ($page) {
         include 'app/views/Dashboard/Admin/admin.php';
     break;
     
-    case 'ajouterTag':
-       $TagController->ajouterTag();
-    break;
-    
-
     default:
         http_response_code(404);
         echo "Page introuvable";

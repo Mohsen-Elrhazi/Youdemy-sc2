@@ -17,7 +17,9 @@
         Ajouter un Tag
     </button>
 
+
     <div class="modal fade" id="tagModal" tabindex="-1">
+
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -25,7 +27,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="tagForm" method="post" action="/index.php?page=ajouterTag">
+                    <form id="tagForm" method="post" action="/app/views/Dashboard/Admin/admin.php?page=tag">
                         <div class="form-group">
                             <label class="form-label" for="tagName">Nom du tag</label>
                             <input type="text" class="form-control" id="tagName" placeholder="ex: JavaScript"

@@ -21,26 +21,25 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Ajouter une Catégorie</h5>
-                    <!-- <p class="modal-subtext">Créez une nouvelle catégorie pour organiser vos cours</p> -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="categoryForm">
+                    <form id="categoryForm" method="post" action="/app/views/Dashboard/Admin/admin.php?page=categorie">
                         <div class="form-group">
                             <label class="form-label" for="categoryName">Nom de la catégorie</label>
-                            <input type="text" class="form-control" id="categoryName" name="categoryName"
-                                placeholder="Entrez le nom de la catégorie" required>
+                            <input type="text" class="form-control" id="categoryName" name="name"
+                                placeholder="Entrez le nom de la catégorie">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="categoryDescription">Description</label>
-                            <textarea class="form-control" id="categoryDescription" name="categoryDescription"
-                                placeholder="Entrez une description pour la catégorie" required></textarea>
+                            <textarea class="form-control" id="categoryDescription" name="description"
+                                placeholder="Entrez une description pour la catégorie"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" data-bs-dismiss="modal">Annuler</button>
-                    <button type="submit" form="categoryForm" class="btn-submit">Ajouter</button>
+                    <button type="submit" form="categoryForm" class="btn-submit" name="ajouterCategory">Ajouter</button>
                 </div>
             </div>
         </div>

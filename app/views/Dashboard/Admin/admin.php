@@ -4,10 +4,18 @@
         //     unset($_SESSION['role']);
         // }
         
-    // $titre="Admin";
     
     require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-    
+
+use Youdemy\App\Controllers\UserController;
+use Youdemy\App\Controllers\AuthController;
+use Youdemy\App\Controllers\TagController;
+use Youdemy\App\Controllers\CategoryController;
+
+
+$tagController=new TagController();
+$categoryController=new CategoryController();
+
     ob_start();
     session_start();
     
@@ -31,12 +39,31 @@ case 'cours':
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/cours.php';
 break;
 case 'categorie':
+    $categoryController->ajouterCategory();
+    if (isset($_SESSION['error'])) {
+        echo "<div class='alert alert-danger text-center'>".$_SESSION['error']."</div>";
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['success'])) {
+        echo "<div class='alert alert-success text-center'>{$_SESSION['success']}</div>";
+        unset($_SESSION['success']);
+    }
+    if (isset($_SESSION['deleted'])) {
+        echo "<div class='alert alert-success text-center'>{$_SESSION['deleted']}</div>";
+        unset($_SESSION['deleted']);
+    }
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/categorie.php';
 break;
 case 'modifier_categorie':
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/modifier_categorie.php';
+if (isset($_SESSION['error'])) {
+    echo "<div class='alert alert-danger text-center'>".$_SESSION['error']."</div>";
+    unset($_SESSION['error']);
+}
+
 break;
 case 'tag':
+    $tagController->ajouterTag();
     if (isset($_SESSION['error'])) {
         echo "<div class='alert alert-danger text-center'>".$_SESSION['error']."</div>";
         unset($_SESSION['error']);

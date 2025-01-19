@@ -1,5 +1,31 @@
 <?php 
-include './forms/ajouter_categorie.php';
-echo "page categorie";
+use Youdemy\App\Controllers\CategoryController;
+use Youdemy\App\Models\Category;
 
+$categoryController = new CategoryController();
+
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $categoryController->deleteCategory($id); 
+}
+$categorys = $categoryController->afficherCategorys();
+
+include './forms/ajouter_categorie.php';
 ?>
+<table class="table table-bordered mt-2 text-center align-middle">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        foreach ($categorys as $category){
+        echo $categoryController->rendreRow($category);
+        }
+          ?>
+    </tbody>
+</table>

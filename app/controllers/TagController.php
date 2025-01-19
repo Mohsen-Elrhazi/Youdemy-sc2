@@ -17,8 +17,17 @@ class TagController{
         // session_start();
         if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['ajouterTag'])){
             $name=htmlspecialchars($_POST['tagName']);
-            
+ 
             if(Validation::validateFields([$name])){
+                // Vérifier si un autre tag avec ce nom existe
+             $allTags=$this->tagRepositorie->getAll();
+             foreach($allTags as $currentTag){
+                if (strtolower($currentTag->getName()) === strtolower($name) ) {
+                    $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
+                    header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
+                    exit;
+                }
+            }
                 $tag=new Tag($name);
                 $this->tagRepositorie->save($tag);
                 $_SESSION['success']= 'Tag a été ajouter avec success';
@@ -68,14 +77,24 @@ class TagController{
             $tag=$this->tagRepositorie->findById($id);
             if($tag){
              if(isset($_POST['edit'])){
-             $name=htmlspecialchars($_POST['name']);
-            if(Validation::validateFields([$name])){
-                $tag->setName($name);
-                $this->tagRepositorie->edit($tag);
-                $_SESSION['success'] = 'Tag modifié avec succès';
-                header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
-                exit;
-              }else{
+                 $name=htmlspecialchars($_POST['name']);
+                 
+                 if(Validation::validateFields([$name])){
+                     // Vérifier si un autre tag avec ce nom existe
+                 $allTags=$this->tagRepositorie->getAll();
+                 foreach($allTags as $currentTag){
+                    if (strtolower($currentTag->getName()) === strtolower($name) && $currentTag->getTagID() !== $tag->getTagID()) {
+                        $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
+                        header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=" . $id);
+                        exit;
+                    }
+                }
+                 $tag->setName($name);
+                 $this->tagRepositorie->edit($tag);
+                 $_SESSION['success'] = 'Tag modifié avec succès';
+                 header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
+                 exit;
+                }else{
                 $_SESSION['error'] = 'Veuillez remplir tous les champs';
                 header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=".$id);
                 exit;
@@ -87,7 +106,8 @@ class TagController{
                 header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
             exit;
             }    
-    }
+          }
+         
     
 }
 ?>
