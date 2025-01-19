@@ -19,20 +19,18 @@ class TagController{
             $name=htmlspecialchars($_POST['tagName']);
  
             if(Validation::validateFields([$name])){
-                // Vérifier si un autre tag avec ce nom existe
-             $allTags=$this->tagRepositorie->getAll();
-             foreach($allTags as $currentTag){
-                if (strtolower($currentTag->getName()) === strtolower($name) ) {
+            // Vérifier si un autre ctegory avec ce nom existe
+                if (Validation::columnExists('tag', 'name', $name)) {
                     $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
                     header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
-                    exit;
-                }
-            }
+                exit;
+              }else{
                 $tag=new Tag($name);
                 $this->tagRepositorie->save($tag);
                 $_SESSION['success']= 'Tag a été ajouter avec success';
                 header("location:/app/views/Dashboard/Admin/admin.php?page=tag");
                 exit;
+                 }
             }else{
                 $_SESSION['error']= 'Veuillez remplir tous les champs';
                 header("location:/app/views/Dashboard/Admin/admin.php?page=tag");
@@ -80,20 +78,18 @@ class TagController{
                  $name=htmlspecialchars($_POST['name']);
                  
                  if(Validation::validateFields([$name])){
-                     // Vérifier si un autre tag avec ce nom existe
-                //  $allTags=$this->tagRepositorie->getAll();
-                //  foreach($allTags as $currentTag){
-                //     if (strtolower($currentTag->getName()) === strtolower($name) && $currentTag->getTagID() !== $tag->getTagID()) {
-                //         $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
-                //         header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=" . $id);
-                //         exit;
-                //     }
-                // }
+                 // Vérifier si un autre tag avec ce nom existe
+                  if (Validation::columnExists('tag', 'name', $name)) {
+                    $_SESSION['error'] = 'Un tag avec ce nom existe déjà.';
+                     header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=" . $id);
+                  exit;
+                 }else{
                  $tag->setName($name);
                  $this->tagRepositorie->edit($tag);
                  $_SESSION['success'] = 'Tag modifié avec succès';
                  header("Location: /app/views/Dashboard/Admin/admin.php?page=tag");
                  exit;
+                 }
                 }else{
                 $_SESSION['error'] = 'Veuillez remplir tous les champs';
                 header("Location: /app/views/Dashboard/Admin/admin.php?page=modifier_tag&id=".$id);

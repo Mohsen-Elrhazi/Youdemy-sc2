@@ -23,6 +23,5 @@ abstract class BaseRepositorie {
 
     abstract public function findById(int $id);
     
-    abstract public function nameExists(string $name);
 }
 ?>
