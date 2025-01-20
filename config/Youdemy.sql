@@ -25,12 +25,22 @@ CREATE TABLE course (
     course_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    content_url VARCHAR(255) NOT NULL,  -- Lien vers la vidéo ou le document
-    category_id INT NOT NULL,  -- Référence à la catégorie du cours
+    content_url VARCHAR(255) NOT NULL,  
+    category_id INT NOT NULL,  
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (category_id) REFERENCES Category(category_id)
 );
+
+ALTER TABLE course
+ADD status ENUM('publish', 'draft') NOT NULL DEFAULT 'draft';
+
+ALTER TABLE course
+ADD price decimal(8,2) Not NULL;
+
+ALTER TABLE course
+ADD imageURl VARCHAR(255) Not NULL;
+
 
 CREATE TABLE Tag (
     tag_id INT AUTO_INCREMENT PRIMARY KEY,

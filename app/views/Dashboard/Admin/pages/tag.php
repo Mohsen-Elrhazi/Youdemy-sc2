@@ -1,5 +1,6 @@
 <?php
 use Youdemy\App\Controllers\TagController;
+use Youdemy\App\Services\TagService;
 use Youdemy\App\Models\Tag;
 
 $tagController = new TagController();
@@ -24,7 +25,8 @@ require_once './forms/ajouter_tag.php';
     <tbody>
         <?php 
         foreach ($tags as $tag){
-        echo $tagController->rendreRow($tag);
+        echo TagService::rendreRow($tag);
+        // echo TagService::rendreCheckbox($tag);
         }
           ?>
     </tbody>
