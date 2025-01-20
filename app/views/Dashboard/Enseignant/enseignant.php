@@ -1,43 +1,43 @@
 <?php
+include_once 'includes/check_enseignant_session.php'; 
+
      
-include './layouts/header.php';
-include './layouts/sidebar.php';
-include './layouts/section.php';
-include './layouts/navbar.php';
-include './layouts/homeContent.php';
+     include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/header.php';
+     include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/sidebar.php';
+     include_once $_SERVER['DOCUMENT_ROOT']. '/app/views/Dashboard/Enseignant/layouts/section.php';
+     include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/navbar.php';
+     include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/homeContent.php';
 
 // Recuperer la page depuis l'URL
 $page = $_GET['page'] ?? 'ajouter_cours';
 
 switch ($page) {
  case 'ajouter_cours':
-include './pages/ajouter_cours.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/ajouter_cours.php';
 break;
 case 'modifier_cours':
-include './pages/modifier_cours.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/modifier_cours.php';
 break;
 case 'cours':
-include './pages/cours.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/cours.php';
 break;
 case 'inscriptions':
-include './pages/inscriptions.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/inscriptions.php';
 break;
 case 'analyses':
-include './pages/analyses.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/analyses.php';
 break;
 case 'logout':
-include './pages/logout.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/logout.php';
 break;
-// case 'ajouter_cours':
 default:
-include './pages/ajouter_cours.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/ajouter_cours.php';
 break;
 }
 
-include './layouts/endHomeContent.php';
-include './layouts/endSection.php';
-
-include './layouts/footer.php';
+include_once $_SERVER['DOCUMENT_ROOT']. '/app/views/Dashboard/Enseignant/layouts/endHomeContent.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/endSection.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/footer.php';
 
 
 ?>

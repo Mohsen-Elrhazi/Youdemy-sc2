@@ -9,13 +9,13 @@ class UserRepositorie {
    
     public function save(User $user) {
         $conn = Database::getConnection();
-        $stmt = $conn->prepare("INSERT INTO user (username, email,  role, password, status) VALUES (:username, :email, :role, :password,  :status)");
+        $stmt = $conn->prepare("INSERT INTO user (username, email, role, status, password ) VALUES (:username, :email, :role, :status, :password)");
         $stmt->execute([
             ':username' => $user->getUserName(),
             ':email' => $user->getEmail(),
             ':role' => $user->getRole(),
-            ':password' => $user->getPassword(),
-            ':status' => $user->getStatus()
+            ':status' => $user->getStatus(),
+            ':password' => $user->getPassword()
         ]);
     }
 

@@ -31,12 +31,12 @@ class AuthController {
 
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                $user = new User($name, $email, $role, $hashedPassword, "inactive");
+                $user = new User($name, $email, $role,"inactive", $hashedPassword );
 
                 $this->userRepositorie->save($user);
 
-                $_SESSION['success'] = "Vous êtes inscrit avec succès!";
                 header("Location: ../../../../index.php?page=login");
+                $_SESSION['success'] = "Vous êtes inscrit avec succès!";
                 exit;
                 }
             } else {

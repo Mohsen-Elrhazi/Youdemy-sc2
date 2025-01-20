@@ -14,9 +14,9 @@ class User{
         $this->userID= $userID;
         $this->username=$username;
         $this->email=$email;
-        $this->password=$password;
         $this->role=$role;
         $this->status=$status;
+        $this->password=$password;
     }
  
 

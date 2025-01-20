@@ -12,7 +12,6 @@ $tagController = new TagController();
 $categoryController = new CategoryController();
 
 ob_start();
-// session_start();
 
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/header.php';
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/sidebar.php';
@@ -20,7 +19,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/app/views/Dashboard/Admin/layouts/section.p
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/navbar.php';
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/homeContent.php';
 
-// include_once 'includes/session_messages.php'; 
+include_once 'includes/session_messages.php'; 
 
 // Récupérer la page depuis l'URL
 $page = $_GET['page'] ?? 'Enseignant';

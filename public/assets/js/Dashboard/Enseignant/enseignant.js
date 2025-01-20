@@ -28,19 +28,18 @@ setTimeout(function () {
   }
 }, 2000);
 
-//  les button de ctiver et desactiver dans page client
-document.querySelectorAll(".status").forEach((statusClient, index) => {
-  const btn = document.querySelectorAll(".status-btn")[index];
 
-  const isActive = statusClient.textContent.trim() === "active";
+// spinner
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('loader').style.display = 'none';
+});
 
-  if (isActive) {
-    btn.classList.add("btn-danger");
-    btn.classList.remove("btn-success");
-    btn.textContent = "Désactiver";
-  } else {
-    btn.classList.add("btn-success");
-    btn.classList.remove("btn-danger");
-    btn.textContent = "Activer";
-  }
+document.querySelectorAll('a').forEach(function (link) {
+  link.addEventListener('click', function (e) {
+      document.getElementById('loader').style.display = 'flex';
+
+      window.onload = function () {
+          document.getElementById('loader').style.display = 'none';
+      };
+  });
 });
