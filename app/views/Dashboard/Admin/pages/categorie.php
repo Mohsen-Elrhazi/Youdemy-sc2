@@ -2,6 +2,8 @@
 
 use Youdemy\App\Controllers\CategoryController;
 use Youdemy\App\Models\Category;
+use Youdemy\App\Services\CategoryService;
+
 
 $categoryController = new CategoryController();
 
@@ -25,7 +27,7 @@ include './forms/ajouter_categorie.php';
     <tbody>
         <?php 
         foreach ($categorys as $category){
-        echo $categoryController->rendreRow($category);
+        echo CategoryService::rendreRow($category);
         }
           ?>
     </tbody>

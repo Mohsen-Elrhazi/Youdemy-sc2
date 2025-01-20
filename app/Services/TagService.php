@@ -29,7 +29,6 @@ class TagService{
         return "<input type='checkbox' id={$tag->getTagID()} name={$tag->getName()}>
                 <label for={$tag->getTagID()} >  {$tag->getName()} </label>
                ";
-          
     }
 }
 ?>
