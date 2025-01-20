@@ -3,6 +3,9 @@ include_once 'includes/check_enseignant_session.php';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
+use Youdemy\App\Controllers\CourseController;
+
+$courseController = new CourseController();
      
      include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/header.php';
      include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/sidebar.php';
@@ -10,11 +13,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
      include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/navbar.php';
      include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/homeContent.php';
 
+include_once 'includes/session_messages.php';
+ 
+ob_start();
+
+
 // Recuperer la page depuis l'URL
 $page = $_GET['page'] ?? 'ajouter_cours';
 
 switch ($page) {
  case 'ajouter_cours':
+     $courseController ->ajouterCourse();
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/pages/ajouter_cours.php';
 break;
 case 'modifier_cours':
@@ -41,5 +50,6 @@ include_once $_SERVER['DOCUMENT_ROOT']. '/app/views/Dashboard/Enseignant/layouts
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/endSection.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/footer.php';
 
+ob_end_flush();
 
 ?>

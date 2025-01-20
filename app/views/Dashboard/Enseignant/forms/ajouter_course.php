@@ -50,12 +50,12 @@ $tags = $tagController->afficherTags();
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Formulaire Produit</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter Course</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- Formulaire -->
-                    <form method="post">
+                    <form method="post" action="/app/views/Dashboard/Enseignant/enseignant.php?page=ajouter_cours">
                         <div class="mb-3">
                             <label for="title" class="form-label">Titre</label>
                             <input type="text" class="form-control" id="title" placeholder="Entrez le titre"
@@ -63,7 +63,7 @@ $tags = $tagController->afficherTags();
                         </div>
                         <div class=" mb-3">
                             <label for="imageURL" class="form-label">URL de l'image</label>
-                            <input type="url" class="form-control" id="imageURL" placeholder="Entrez l'URL de l'image"
+                            <input type="text" class="form-control" id="imageURL" placeholder="Entrez l'URL de l'image"
                                 name="imageURL">
                         </div>
                         <div class="mb-3">
@@ -73,12 +73,19 @@ $tags = $tagController->afficherTags();
                         </div>
                         <div class="mb-3">
                             <label for="contentURL" class="form-label">URL du contenu</label>
-                            <input type="url" class="form-control" id="contentURL" placeholder="Entrez l'URL du contenu"
-                                name="contenuURL">
+                            <input type="text" class="form-control" id="contentURL"
+                                placeholder="Entrez l'URL du contenu" name="contentURL">
                         </div>
                         <div class="mb-3">
-
-                            <select id="categorys" name="category">
+                            <label for="typeContentURL" class="form-label">Type URL</label>
+                            <select id="typeContentURL" name="typeContent">
+                                <option value="video">Video</option>
+                                <option value="pdf">PDF</option>
+                                <select>
+                        </div>
+                        <div class="mb-3">
+                            <label>Categorys</label>
+                            <select id="categorys" name="categoryID">
                                 <?php
                                 foreach($categorys as $category){
                                     echo CategoryService::rendreOption($category);
@@ -86,24 +93,29 @@ $tags = $tagController->afficherTags();
                                   ?>
                             </select>
                         </div>
-                        <div class="mb-3 tags">
-                            <?php
+                        <div class="mb-3 ">
+                            <label>Tags</label>
+                            <div class="mb-3 tags">
+                                <?php
                                 foreach($tags as $tag){
                                     echo TagService::rendreCheckbox($tag);
                                 }
                             ?>
+                            </div>
+
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Prix</label>
                             <input type="number" class="form-control" id="price" placeholder="Entrez le prix"
                                 name="price">
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-primary" id="submitForm">Soumettre</button>
+                    <button type="submit" class="btn btn-primary" id="submitForm" name="ajouterCours">Save</button>
                 </div>
+                </form>
+
             </div>
         </div>
     </div>

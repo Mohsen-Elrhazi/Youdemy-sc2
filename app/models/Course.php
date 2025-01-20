@@ -7,20 +7,20 @@ class Course {
     private $imageURL;
     private $description;
     private $contentURL;
-    private $category;
-    private $tags = [];
+    private $type_content;
+    private $categoryID;
     private $price;
     private $status;
 
 
-    public function __construct($title, $imageURL, $description, $contentURL, $category, $tags = [], $price, $status, $courseID = null) {
+    public function __construct($title, $imageURL, $description, $contentURL, $type_content, $categoryID, $price, $status, $courseID = null) {
         $this->courseID = $courseID;
         $this->title = $title;
         $this->imageURL = $imageURL;
         $this->description = $description;
         $this->contentURL = $contentURL;
-        $this->category = $category;
-        $this->tags = $tags;
+        $this->type_content = $type_content;
+        $this->categoryID = $categoryID;
         $this->price = $price;
         $this->status=$status;
     }
@@ -45,14 +45,16 @@ class Course {
     public function getContentURL() {
         return $this->contentURL;
     }
-
-    public function getCategory() {
-        return $this->category;
+    
+    public function getTypeContent() {
+        return $this->type_content;
     }
 
-    public function getTags() {
-        return $this->tags;
+    public function getCategoryID() {
+        return $this->categoryID;
     }
+
+ 
 
     public function getPrice() {
         return $this->price;
@@ -78,13 +80,13 @@ class Course {
     public function setContentURL($contentURL) {
         $this->contentURL = $contentURL;
     }
-
-    public function setCategorie($category) {
-        $this->category = $category;
+    
+    public function setTypeContent($type_content) {
+        $this->type_content = $type_content;
     }
 
-    public function setTags($tags) {
-        $this->tags = $tags;
+    public function setCategorie($categoryID) {
+        $this->category = $categoryID;
     }
 
     public function setPrice($price) {

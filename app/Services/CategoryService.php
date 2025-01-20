@@ -27,7 +27,7 @@ class CategoryService{
     }
 
     public static function rendreOption(Category $category) {
-        return "<option value={$category->getCategoryID()}>{$category->getName()}</option>";
+        return "<option value='{$category->getCategoryID()}'>{$category->getName()}</option>";
     }
 }
 ?>

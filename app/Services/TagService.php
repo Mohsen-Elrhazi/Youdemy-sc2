@@ -26,9 +26,10 @@ class TagService{
     }
 
     public static function rendreCheckbox(Tag $tag) {
-        return "<input type='checkbox' id={$tag->getTagID()} name={$tag->getName()}>
-                <label for={$tag->getTagID()} >  {$tag->getName()} </label>
-               ";
+        $tagID = htmlspecialchars($tag->getTagID());  
+        $tagName = htmlspecialchars($tag->getName());
+        return "<input type='checkbox' id='{$tagID}' name='tags[]' value='{$tagID}'>
+                <label for='{$tagID}'>{$tagName}</label>";
     }
 }
 ?>

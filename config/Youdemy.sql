@@ -39,7 +39,11 @@ ALTER TABLE course
 ADD price decimal(8,2) Not NULL;
 
 ALTER TABLE course
-ADD imageURl VARCHAR(255) Not NULL;
+ADD image_url VARCHAR(255) Not NULL;
+
+ALTER TABLE course
+ADD COLUMN type_content ENUM('video', 'pdf') NOT NULL;
+
 
 
 CREATE TABLE Tag (
