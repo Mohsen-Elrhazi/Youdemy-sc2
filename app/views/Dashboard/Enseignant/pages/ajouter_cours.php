@@ -1,3 +1,3 @@
-<?php
-echo "page ajouter cours";
+<?php 
+require_once './forms/ajouter_course.php';
 ?>

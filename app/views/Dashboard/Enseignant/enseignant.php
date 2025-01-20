@@ -1,6 +1,8 @@
 <?php
 include_once 'includes/check_enseignant_session.php'; 
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+
      
      include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/header.php';
      include_once $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Enseignant/layouts/sidebar.php';

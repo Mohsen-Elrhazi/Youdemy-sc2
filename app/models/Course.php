@@ -7,19 +7,19 @@ class Course {
     private $imageURL;
     private $description;
     private $contentURL;
-    private $categorie;
+    private $category;
     private $tags = [];
     private $price;
     private $status;
 
 
-    public function __construct($title, $imageURL, $description, $contentURL, $categorie, $tags = [], $price, $status, $courseID = null) {
+    public function __construct($title, $imageURL, $description, $contentURL, $category, $tags = [], $price, $status, $courseID = null) {
         $this->courseID = $courseID;
         $this->title = $title;
         $this->imageURL = $imageURL;
         $this->description = $description;
         $this->contentURL = $contentURL;
-        $this->categorie = $categorie;
+        $this->category = $category;
         $this->tags = $tags;
         $this->price = $price;
         $this->status=$status;
@@ -46,8 +46,8 @@ class Course {
         return $this->contentURL;
     }
 
-    public function getCategorie() {
-        return $this->categorie;
+    public function getCategory() {
+        return $this->category;
     }
 
     public function getTags() {
@@ -79,8 +79,8 @@ class Course {
         $this->contentURL = $contentURL;
     }
 
-    public function setCategorie($categorie) {
-        $this->categorie = $categorie;
+    public function setCategorie($category) {
+        $this->category = $category;
     }
 
     public function setTags($tags) {
