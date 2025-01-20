@@ -19,7 +19,7 @@ class TagRepositorie extends BaseRepositorie {
         }
         
     }
-// function afficher lastags
+// function afficher las tags
     public function display() {
         $stmt = $this->conn->prepare("SELECT * FROM tag ORDER BY tag_id ASC");
         $stmt->execute(); 

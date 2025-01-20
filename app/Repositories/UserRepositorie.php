@@ -26,14 +26,6 @@ class UserRepositorie {
         return $stmt->rowCount() > 0;
     }
 
-    // public function updateStatus($userId, $status) {
-    //     $stmt = $this->db->prepare("UPDATE user SET status = :status WHERE id = :id");
-    //     return $stmt->execute([
-    //         ':status' => $status,
-    //         ':id' => $userId
-    //     ]);
-    // }
-
     public function getUserByEmail($email) {
         $conn = Database::getConnection();
         $stmt = $conn->prepare("SELECT * FROM user WHERE email = :email");
@@ -41,6 +33,26 @@ class UserRepositorie {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     
-    
+    public function getAllUsers() {
+        $conn = Database::getConnection();
+        $stmt = $conn->prepare("SELECT * FROM user where role <> 'admin' ");
+        $stmt->execute(); 
+        $dataUsers = [];
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($users as $user) {
+            $dataUsers[] = new User($user['username'],$user['email'], $user['role'],$user['status'],$user['password'],$user['user_id'] );
+        }
+        return $dataUsers;
+    }
+
+    // delete user
+    public function delete($id) {
+        $conn = Database::getConnection();
+        $stmt = $conn->prepare("DELETE FROM user WHERE user_id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
+
 }
 ?>

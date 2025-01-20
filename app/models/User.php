@@ -10,7 +10,7 @@ class User{
     private $status;
 
 
-    public function __construct($username, $email, $role, $password, $status,$userID=null){
+    public function __construct($username, $email, $role, $status, $password=null,$userID=null){
         $this->userID= $userID;
         $this->username=$username;
         $this->email=$email;

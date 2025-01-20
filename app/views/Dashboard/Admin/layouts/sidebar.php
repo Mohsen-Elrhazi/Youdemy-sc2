@@ -6,16 +6,16 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="/app/views/Dashboard/Admin/admin.php?page=enseignants">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=Enseignant">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 <span class="links_name">Enseignants</span>
             </a>
         </li>
         <li>
-            <a href="/app/views/Dashboard/Admin/admin.php?page=utilisateurs">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=Etudiant">
                 <!-- <i class="bx bx-user"></i> -->
                 <i class="fa-solid fa-users"></i>
-                <span class="links_name">Utilisateurs</span>
+                <span class="links_name">etudiants</span>
             </a>
         </li>
         <li>

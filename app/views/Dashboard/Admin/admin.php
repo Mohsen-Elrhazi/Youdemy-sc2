@@ -23,14 +23,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/homeConten
 include_once 'includes/session_messages.php'; 
 
 // Récupérer la page depuis l'URL
-$page = $_GET['page'] ?? 'enseignants';
+$page = $_GET['page'] ?? 'Enseignant';
 
 switch ($page) {
-    case 'enseignants':
+    case 'Enseignant':
         include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/enseignants.php';
         break;
-    case 'utilisateurs':
-        include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/utilisateurs.php';
+    case 'Etudiant':
+        include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/etudiants.php';
         break;
     case 'cours':
         include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/cours.php';

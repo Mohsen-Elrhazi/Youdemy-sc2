@@ -6,7 +6,7 @@ use Youdemy\App\Models\User;
 $userController = new UserController();
 
 $userController->deleteUser();
-    
+
 $users = $userController->afficherUsers();
 
 
@@ -25,7 +25,7 @@ $users = $userController->afficherUsers();
     <tbody>
         <?php 
         foreach ($users as $user){
-            if($user->getRole()==='Enseignant'){
+            if($user->getRole()==='Etudiant'){
                 echo $userController->rendreRow($user);
             }
         }
