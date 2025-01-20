@@ -20,7 +20,7 @@ include $_SERVER['DOCUMENT_ROOT']. '/app/views/Dashboard/Admin/layouts/section.p
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/navbar.php';
 include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/layouts/homeContent.php';
 
-include_once 'includes/session_messages.php'; 
+// include_once 'includes/session_messages.php'; 
 
 // Récupérer la page depuis l'URL
 $page = $_GET['page'] ?? 'Enseignant';
@@ -54,6 +54,9 @@ switch ($page) {
         break;
     case 'analyses':
         include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/analyses.php';
+        break;
+    case 'configuration':
+        include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/configuration.php';
         break;
     case 'logout':
         include $_SERVER['DOCUMENT_ROOT'].'/app/views/Dashboard/Admin/pages/logout.php';

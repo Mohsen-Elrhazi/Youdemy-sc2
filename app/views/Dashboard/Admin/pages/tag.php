@@ -1,11 +1,4 @@
 <?php
-
-// session_start();
-// if (!isset($_SESSION['role']) || $_SESSION['role'] != 'Admin') {
-//     $_SESSION['error'] = "Vous devez être connecté en tant qu'admin pour accéder à cette page.";
-//     header("Location:/index.php?page=login");
-//     exit();
-// }
 use Youdemy\App\Controllers\TagController;
 use Youdemy\App\Models\Tag;
 

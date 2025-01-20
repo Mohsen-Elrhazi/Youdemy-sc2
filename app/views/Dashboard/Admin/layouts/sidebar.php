@@ -66,7 +66,7 @@
             </a>
         </li> -->
         <li>
-            <a href="/app/views/Dashboard/Admin/admin.php?page=config">
+            <a href="/app/views/Dashboard/Admin/admin.php?page=configuration">
                 <i class="bx bx-cog"></i>
                 <span class="links_name">Configuration</span>
             </a>

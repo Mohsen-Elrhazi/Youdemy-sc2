@@ -1,4 +1,5 @@
 <?php 
+
 use Youdemy\App\Controllers\CategoryController;
 use Youdemy\App\Models\Category;
 

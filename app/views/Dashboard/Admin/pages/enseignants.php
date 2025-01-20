@@ -1,11 +1,16 @@
 <?php
 
+
 use Youdemy\App\Controllers\UserController;
-use Youdemy\App\Models\User;
+use Youdemy\App\Controllers\AdminController;
+// use Youdemy\App\Models\User;
 
 $userController = new UserController();
+$adminController = new AdminController();
 
 $userController->deleteUser();
+
+$adminController->updateStatus();
     
 $users = $userController->afficherUsers();
 

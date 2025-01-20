@@ -11,28 +11,46 @@ class AdminController {
         $this->adminRepositorie = new AdminRepositorie();
     }
 
-    public function updateStatus($id) {
+
+    public function updateStatus() {
+        if(isset($_GET['statusID'])){
+            $id=$_GET['statusID'];
+         
         $user = $this->adminRepositorie->getUserById($id);
-        
-        // Vérifier l'état actuel du statut
-        $currentStatus = $user['status']; // 'active' ou 'inactive'
-        
-        // Définir le nouveau statut
-        if ($currentStatus === 'active') {
-            $newStatus = 'inactive';
-            $_SESSION['success'] = 'L\'utilisateur a été désactivé';
-        } else {
-            $newStatus = 'active';
-            $_SESSION['success'] = 'L\'utilisateur a été activé';
+
+        if (!$user) {
+            $_SESSION['error'] = "Utilisateur introuvable.";
+            header("Location: /index.php?page=admin");
+            exit;
         }
-    
-        // Mettre à jour le statut dans la base de données
-        $this->adminRepositorie->updateStatus($id, $newStatus);
-    
-        // Rediriger vers la page de gestion des utilisateurs
-        header("Location: /app/views/Dashboard/Admin/admin.php?page=Etudiant");  // ou selon votre rôle
+
+        $currentStatus = $user['status']; 
+        $role=$user['role'];
+        
+        if ($currentStatus === 'active') {
+            if($role==='Enseignant'){
+             $_SESSION['success'] = 'Enseignant a été désactivé';
+            }elseif($role==='Etudiant'){
+             $_SESSION['success'] = 'Etudiant a été désactivé';
+            }
+            $newStatus = 'inactive';
+           
+        } else {
+            if($role==='Enseignant'){
+                $_SESSION['success'] = 'Enseignant a été activé';
+               }elseif($role==='Etudiant'){
+                $_SESSION['success'] = 'Etudiant a été activé';
+               }
+            $newStatus = 'active';
+        }
+
+        $this->adminRepositorie->updateUserStatus($id, $newStatus);
+        header("Location: /app/views/Dashboard/Admin/admin.php?page={$role}");  
         exit;
     }
+    }
+    
+
     
 
 }

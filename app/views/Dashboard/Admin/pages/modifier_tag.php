@@ -1,5 +1,4 @@
 <?php
-
 use Youdemy\App\Controllers\TagController;
 use Youdemy\App\Models\Tag;
 

@@ -18,25 +18,39 @@ class UserController {
     }
 
     public function rendreRow(User $user) {
+        // initialisation des variables
+        $action = '';
+        $statusClass = '';
+    
+        // determiner l'action et la classe CSS selon le statut de user
+        if ($user->getStatus() === 'active') {
+            $action = 'Désactiver';
+            $statusClass = 'btn-secondary';  
+        } else {
+            $action = 'Activer';
+            $statusClass = 'btn-success';  
+        }
+    
         return "
             <tr>
-            <td>" . $user->getUserID() . "</td>   
+                <td>" . $user->getUserID() . "</td>
                 <td>" . $user->getUserName() . "</td>
                 <td>" . $user->getEmail() . "</td>
                 <td>" . $user->getRole() . "</td>
                 <td>" . $user->getStatus() . "</td>
                 <td>
-                    <a class='btn btn-warning text-light text-decoration-none px-4 me-4' 
-                       href='?page=modifier_user&id=" . $user->getuserID() . "'>
-                        Activer
+                    <a class='btn $statusClass text-light text-decoration-none px-4 me-4' 
+                       href='?page={$user->getRole()}&statusID={$user->getUserID()}'>
+                        $action
                     </a>
                     <a class='btn btn-danger text-light text-decoration-none' 
-                       href='?page={$user->getRole()}&delete=" . $user->getuserID() . "'>
+                       href='?page={$user->getRole()}&delete={$user->getUserID()}'>
                         Delete
                     </a>
                 </td>
             </tr>";
     }
+    
 
     // function delete user
     public function deleteUser(){
